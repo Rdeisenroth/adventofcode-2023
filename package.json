@@ -2,10 +2,10 @@
   "name": "adventofcode-2023",
   "version": "1.0.0",
   "description": "Advent of code (2023)",
-  "main": "/dist/src/$DAY/$DAY.js",
+  "main": "/dist/src/$DAY/day$DAY.js",
   "scripts": {
     "test": "jest",
-    "start": "ts-node src/$DAY/$DAY.ts",
+    "start": "ts-node src/$DAY/day$DAY.ts",
     "nodemon": "nodemon src/$DAY/day$DAY.ts",
     "build": "tsc",
     "lint": "eslint --ext .ts {src,test} --fix",
