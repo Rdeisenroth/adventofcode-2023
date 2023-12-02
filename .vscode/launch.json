@@ -23,17 +23,9 @@
         },
         {
             "type": "node",
-            "name": "vscode-jest-tests.v2",
+            "name": "vscode-jest-tests.v2.adventofcode-2023",
             "request": "launch",
             "args": [
-                // "/usr/share/nvm/init-nvm.sh",
-                // "&&",
-                // "nvm",
-                // "use",
-                // "--lts",
-                // "&&",
-                "/home/ruben/.nvm/versions/node/v20.10.0/bin/npm",
-                "run",
                 "test",
                 "--",
                 "--runInBand",
@@ -43,11 +35,11 @@
                 "--runTestsByPath",
                 "${jest.testFile}"
             ],
-            "nodeVersionHint": "20.10.0",
-            "cwd": "${workspaceFolder}",
+            "cwd": "/home/ruben/git/adventofcode/adventofcode-2023",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "disableOptimisticBPs": true,
+            "runtimeExecutable": "npm"
         }
     ]
 }
