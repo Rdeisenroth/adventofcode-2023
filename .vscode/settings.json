@@ -4,6 +4,7 @@
         "type": "on-save",
         "runAllTestsOnStartup": false
     },
+    "jest.auRun": "off",
     "jest.debugMode": true,
     // workaround for weird jest bug
     // "jest.jestCommandLine": "source /usr/share/nvm/init-nvm.sh && nvm use --lts && npm run test --",
