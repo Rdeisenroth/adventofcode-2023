@@ -13,8 +13,8 @@ type Game = {
 
 export class Day02 extends AdventOfCodeDay {
     day = 2;
-    part1(input: string): string {
-        let games = input
+    private parseInput(input: string): Game[] {
+        return input
             .split("\n")
             .filter((line) => !!line)
             .map((line) => {
@@ -27,6 +27,9 @@ export class Day02 extends AdventOfCodeDay {
                 );
                 return { id, subsets };
             });
+    }
+    part1(input: string): string {
+        let games = this.parseInput(input);
         console.log("games", JSON.stringify(games, null, 2));
         const max_red = 12, max_green = 13, max_blue = 14;
         let validGames = games.filter((game) => !game.subsets.some((subset) => {
@@ -39,19 +42,7 @@ export class Day02 extends AdventOfCodeDay {
         return validGames.map((game) => game.id).reduce((a, b) => a + b, 0).toString();
     }
     part2(input: string): string {
-        let games = input
-            .split("\n")
-            .filter((line) => !!line)
-            .map((line) => {
-                const [prefix, subsetString] = line.split(":");
-                let id = parseInt(prefix.split(" ")[1]);
-                let subsets = subsetString.split(";").map((subsetString) => new Map(subsetString.split(",").map((colorString) => {
-                    let [count, color] = colorString.trim().split(" ");
-                    return [color, parseInt(count)] as [CubeColor, number];
-                })),
-                );
-                return { id, subsets };
-            });
+        let games = this.parseInput(input);
         console.log("games", JSON.stringify(games, null, 2));
         let powers = games.map((game) => {
             let min_red = 0, min_green = 0, min_blue = 0;
