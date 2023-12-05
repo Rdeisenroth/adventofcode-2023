@@ -1,7 +1,7 @@
 import _ from "lodash";
 import { AdventOfCodeDay } from "../util/util";
 
-const dictKeys = ["seed", "soil", "fertilizer", "water", "light", "temperature", "humidity", "location"];
+// const dictKeys = ["seed", "soil", "fertilizer", "water", "light", "temperature", "humidity", "location"];
 type Dict = { from: string, to: string, mappings: { ds: number, ss: number, size: number, lastProcessed?: number }[] };
 
 export class Day05 extends AdventOfCodeDay {

@@ -19,9 +19,9 @@ export class Day02 extends AdventOfCodeDay {
             .filter((line) => !!line)
             .map((line) => {
                 const [prefix, subsetString] = line.split(":");
-                let id = parseInt(prefix.split(" ")[1]);
-                let subsets = subsetString.split(";").map((subsetString) => new Map(subsetString.split(",").map((colorString) => {
-                    let [count, color] = colorString.trim().split(" ");
+                const id = parseInt(prefix.split(" ")[1]);
+                const subsets = subsetString.split(";").map((subsetString) => new Map(subsetString.split(",").map((colorString) => {
+                    const [count, color] = colorString.trim().split(" ");
                     return [color, parseInt(count)] as [CubeColor, number];
                 })),
                 );
@@ -29,10 +29,10 @@ export class Day02 extends AdventOfCodeDay {
             });
     }
     part1(input: string): string {
-        let games = this.parseInput(input);
+        const games = this.parseInput(input);
         console.log("games", JSON.stringify(games, null, 2));
         const max_red = 12, max_green = 13, max_blue = 14;
-        let validGames = games.filter((game) => !game.subsets.some((subset) => {
+        const validGames = games.filter((game) => !game.subsets.some((subset) => {
             return (subset.get(CubeColor.RED) ?? 0) > max_red
                 || (subset.get(CubeColor.GREEN) ?? 0) > max_green
                 || (subset.get(CubeColor.BLUE) ?? 0) > max_blue;
@@ -42,9 +42,9 @@ export class Day02 extends AdventOfCodeDay {
         return validGames.map((game) => game.id).reduce((a, b) => a + b, 0).toString();
     }
     part2(input: string): string {
-        let games = this.parseInput(input);
+        const games = this.parseInput(input);
         console.log("games", JSON.stringify(games, null, 2));
-        let powers = games.map((game) => {
+        const powers = games.map((game) => {
             let min_red = 0, min_green = 0, min_blue = 0;
             game.subsets.forEach((subset) => {
                 if ((subset.get(CubeColor.RED) ?? 0) > min_red) {
