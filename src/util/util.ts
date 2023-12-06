@@ -20,7 +20,7 @@ export abstract class AdventOfCodeDay {
         return fs.readFileSync(this.inputPath, "utf-8");
     }
     get inputLines(): string[] {
-        return this.input.split(/\n/);
+        return this.input.split(/\n/).filter(line => !!line);
     }
 
     abstract part1(input: string): string;
