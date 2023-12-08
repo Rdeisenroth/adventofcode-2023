@@ -1,4 +1,5 @@
 import { AdventOfCodeDay } from "../util/util";
+import * as mathjs from "mathjs";
 
 export class Day08 extends AdventOfCodeDay {
     day = 8;
@@ -56,9 +57,7 @@ export class Day08 extends AdventOfCodeDay {
                 }
             }
         }
-        const gcd = (a, b) => b == 0 ? a : gcd(b, a % b);
-        const lcm = (a, b) => a / gcd(a, b) * b;
-        return [...zCounts.values()].reduce((a, b) => lcm(a, b)).toString();
+        return [...zCounts.values()].reduce((a, b) => mathjs.lcm(a, b)).toString();
     }
 }
 
