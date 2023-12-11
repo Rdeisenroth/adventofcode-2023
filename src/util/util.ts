@@ -85,6 +85,19 @@ export const directions8: directionVector8[] = [
     { x: 1, y: -1, dir: Direction8.DOWN_RIGHT },
 ];
 
+export type Point = { x: number, y: number };
+
+export function move(p: Point, dir: Direction): Point {
+    const d = directions.find(d => d.dir === dir)!;
+    return { x: p.x + d.x, y: p.y + d.y };
+}
+
+export function move8(p: Point, dir: Direction8): Point {
+    const d = directions8.find(d => d.dir === dir)!;
+    return { x: p.x + d.x, y: p.y + d.y };
+}
+
+
 /**
  * Returns an array of numbers from l to u
  * @param l lower bound, inclusive
