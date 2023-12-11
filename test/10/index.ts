@@ -1,4 +1,4 @@
-import { AdventOfCodeDay } from "../../src/util/util";
+import { AdventOfCodeDay, Point } from "../../src/util/util";
 // disable running the actual code
 AdventOfCodeDay.runnable = false;
 import { Day10 } from "./../../src/10/day10";
@@ -18,9 +18,27 @@ describe(`testing day ${dayImpl.day}`, () => {
         // expect(() => dayImpl.part1(dayImpl.input)).toThrowError("Method not implemented.");
     });
     test("test part 2", () => {
-        dayImpl.inputPath = dayImpl.getInputPath(true, 2);
-        // const result = dayImpl.part2(dayImpl.input);
-        // expect(result).toBe("1");
-        expect(() => dayImpl.part2(dayImpl.input)).toThrowError("Method not implemented.");
+        dayImpl.inputPath = dayImpl.getInputPath(true, 3);
+        const result = dayImpl.part2(dayImpl.input);
+        expect(result).toBe("4");
+        // expect(() => dayImpl.part2(dayImpl.input)).toThrowError("Method not implemented.");
+    });
+    test("test part 2", () => {
+        dayImpl.inputPath = dayImpl.getInputPath(true, 4);
+        const result = dayImpl.part2(dayImpl.input);
+        expect(result).toBe("4");
+        // expect(() => dayImpl.part2(dayImpl.input)).toThrowError("Method not implemented.");
+    });
+    test("test part 2", () => {
+        dayImpl.inputPath = dayImpl.getInputPath(true, 5);
+        const result = dayImpl.part2(dayImpl.input);
+        expect(result).toBe("8");
+        // expect(() => dayImpl.part2(dayImpl.input)).toThrowError("Method not implemented.");
+    });
+    test("test part 2", () => {
+        dayImpl.inputPath = dayImpl.getInputPath(true, 6);
+        const result = dayImpl.part2(dayImpl.input);
+        expect(result).toBe("10");
+        // expect(() => dayImpl.part2(dayImpl.input)).toThrowError("Method not implemented.");
     });
 });
